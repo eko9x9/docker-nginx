@@ -1,9 +1,8 @@
-/**/**/public*
 # compiled output
 /**/**/dist
 /**/**/node_modules
 /**/**/temp
-/**/**/public*
+/**/**/yarn*
 /**/**/build
 # IDE - VSCode
 .vscode/*
