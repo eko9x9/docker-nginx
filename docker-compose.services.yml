@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+
+  client_one:
+    build: 
+      context: ./client/client-one
+      dockerfile: Dockerfile
+    container_name: client_one
+    command: yarn start
+    ports: 
+      - "3000:3000"
+    networks: 
+      - default
+    volumes: 
+      - type: volume
+        target: /app/node_modules
+      - type: volume
+        target: /app/public
+      - type: bind
+        source: ./client/client-one
+        target: /app
+
+  server_one:
+    build: 
+      context: ./server/server-one
+      dockerfile: Dockerfile
+    container_name: server_one
+    command: yarn start:dev
+    ports: 
+      - "2000:2000"
+    networks: 
+      - default
+    volumes: 
+      - type: volume
+        target: /app/node_modules
+      - type: volume
+        target: /app/public
+      - type: bind
+        source: ./server/server-one
+        target: /app
+        
+volumes: 
+  local-host:
+    driver: local
+
+networks: 
+  default:

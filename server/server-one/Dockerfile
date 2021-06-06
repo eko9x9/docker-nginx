@@ -1,4 +1,3 @@
-  
 FROM node:buster
 
 WORKDIR /app
