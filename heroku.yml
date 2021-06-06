@@ -1,0 +1,13 @@
+setup:
+  addons:
+    - plan: heroku-test
+      as: TEST
+  config:
+    APP_NAME: heroku-dockerize
+build:
+  docker:
+    web: ./client/client-one/Dockerfile
+  config:
+    NODE_ENV: production
+run:
+  web: npm start
