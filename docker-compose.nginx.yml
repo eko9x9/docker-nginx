@@ -12,7 +12,7 @@ services:
       - default
     environment:
       - NGINX_PORT=80
-    #restart: always
+    restart: always
 
 networks: 
   default:

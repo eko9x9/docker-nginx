@@ -14,8 +14,6 @@ services:
     volumes: 
       - type: volume
         target: /app/node_modules
-      - type: volume
-        target: /app/public
       - type: bind
         source: ./client/client-one
         target: /app
